@@ -18,3 +18,7 @@ Hyperledger docker ding wordt ingesteld komt binnenkort beschikbaar
 ## golang chaincode
 
 https://github.com/IBM-Blockchain/learn-chaincode
+also
+set gopath 
+and run `go get -u github.com/hyperledger/fabric/core/chaincode/shim`
+to install chaincode dependencies
