@@ -12,3 +12,9 @@ Open source voor hyperledger community
 Aanbieden aan banken als service
 
 Hyperledger docker ding wordt ingesteld komt binnenkort beschikbaar
+
+
+
+## golang chaincode
+
+https://github.com/IBM-Blockchain/learn-chaincode
