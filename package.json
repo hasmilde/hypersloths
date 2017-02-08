@@ -1,0 +1,26 @@
+{
+  "name": "hypersloths",
+  "version": "1.0.0",
+  "description": "#### Notes from first meeting Golang",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypersloths/hypersloths.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hypersloths/hypersloths/issues"
+  },
+  "homepage": "https://github.com/hypersloths/hypersloths#readme",
+  "dependencies": {
+    "request": "^2.79.0"
+  }
+}

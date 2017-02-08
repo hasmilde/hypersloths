@@ -1,0 +1,18 @@
+{
+  "jsonrpc": "2.0",
+  "method": "query",
+  "params": {
+    "type": 1,
+    "chaincodeID": {
+      "name": "<CHAINCODE_HASH_HERE>"
+    },
+    "ctorMsg": {
+      "function": "read",
+      "args": [
+        "<YOUR_KEYS_HERE>"
+      ]
+    },
+    "secureContext": "<YOUR_USER_HERE>"
+  },
+  "id": 2
+}
