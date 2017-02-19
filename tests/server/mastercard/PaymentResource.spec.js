@@ -24,16 +24,16 @@ var requestdata2 = require('./resources/requestdata_payment2.json');
   });
 
 //  ignores based on not found by mastercardAPI
-describe('moneysend.Payment.create method', () => {
-   it('should respond by sending a correct response', (done) => {
-
-     moneysend(requestdata1,function(err, data){
-       expect(data.send.calledWith('Hello world 2')).to.equal(true);
-       done();
-     });
-
-   });
- });
+//describe('moneysend.Payment.create method', () => {
+//   it('should respond by sending a correct response', (done) => {
+//
+//     moneysend(requestdata1,function(err, data){
+//       expect(data.send.calledWith('Hello world 2')).to.equal(true);
+//       done();
+//     });
+//
+//   });
+// });
 
   describe('moneysend.Payment.create method', () => {
       it('should respond by sending a correct response', (done) => {
