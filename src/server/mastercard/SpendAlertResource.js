@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-var moneysend = require('mastercard-moneysend');
-var MasterCardAPI = moneysend.MasterCardAPI;
+var spendalerts = require('mastercard-spendalerts');
+var MasterCardAPI = spendalerts.MasterCardAPI;
 
 var mastercardAPIProperties = require('./../resources/mastercardAPI-properties.json');
 var consumerKey = mastercardAPIProperties.consumerKey;   // You should copy this from "My Keys" on your project page e.g. UTfbhDCSeNYvJpLL5l028sWL9it739PYh6LU5lZja15xcRpY!fd209e6c579dc9d7be52da93d35ae6b6c167c174690b72fa
@@ -28,14 +28,14 @@ function initializeAPI(){
 
 
 
-var createFunding = function(req,resp){
+var queryAlerts = function(req,resp){
 
 console.log('');
-console.log('start with createFunding');
+console.log('start with queryAlerts');
 
 initializeAPI();
 
-moneysend.Funding.create(req
+spendalerts.Alerts.query(req
 , function (error, data) {
     if (error) {
         console.error("An error occurred");
@@ -57,5 +57,5 @@ moneysend.Funding.create(req
 });
 }
 
-module.exports = createFunding;
+module.exports = queryAlerts;
 

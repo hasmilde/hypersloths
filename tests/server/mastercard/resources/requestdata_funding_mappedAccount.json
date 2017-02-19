@@ -15,9 +15,9 @@
       "Currency": "840"
     },
     "ReceiverName": {
-      "First": "Lopez",
+      "Last": "Lopez",
       "Middle": "R",
-      "Last": "Jose"
+      "First": "Jose"
     },
     "ReceiverAddress": {
       "Line1": "Pueblo Street",
@@ -30,9 +30,9 @@
     "ReceivingAccountNumber": "5184680420000073",
     "ReceiverDateOfBirth": "06061980",
     "SenderName": {
-      "First": "Lopez",
+      "Last": "Lopez",
       "Middle": "R",
-      "Last": "Jose"
+      "First": "Jose"
     },
     "SenderDateOfBirth": "06061980",
     "SenderPhoneNumber": "1800639426",
