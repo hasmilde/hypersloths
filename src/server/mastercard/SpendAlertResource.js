@@ -32,6 +32,7 @@ var queryAlerts = function(req,resp){
 
 console.log('');
 console.log('start with queryAlerts');
+console.log('NOT YET IMPLEMENTED!!!');
 
 initializeAPI();
 
@@ -43,16 +44,8 @@ spendalerts.Alerts.query(req
         resp(error);
     }
     else {
-        console.log(data.Transfer.RequestId);     //Output-->1199008
-        console.log(data.Transfer.TransactionReference);     //Output-->1122058832510050082
-        console.log(data.Transfer.TransactionHistory.Transaction.Type);     //Output-->FUNDING
-        console.log(data.Transfer.TransactionHistory.Transaction.SystemTraceAuditNumber);     //Output-->007512
-        console.log(data.Transfer.TransactionHistory.Transaction.NetworkReferenceNumber);     //Output-->313286843
-        console.log(data.Transfer.TransactionHistory.Transaction.SettlementDate);     //Output-->0105
-        console.log(data.Transfer.TransactionHistory.Transaction.Response.Code);     //Output-->00
-        console.log(data.Transfer.TransactionHistory.Transaction.Response.Description);     //Output-->Approved or completed successfully
-        console.log(data.Transfer.TransactionHistory.Transaction.SubmitDateTime);     //Output-->2016-01-04T18:12:40Z
-        resp(null,data);
+      console.log(data);
+             resp(null,data);
     }
 });
 }
