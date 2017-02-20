@@ -3,6 +3,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const mastercard = require('./mastercard');
 
 
 // Configure the server
@@ -20,10 +21,10 @@ app.use(bodyParser.urlencoded({extended:true})); // added for passport/login
 app.use('/login', express.static('src/client'));
 
 // Pass app to the session (because it needs the added middleware)
-require('./session').session(app);
+//require('./session').session(app);
 
 // Send a response to the index
-app.get('/', moneysend.Funding.create);
+app.use('/mastercard', mastercard);
 
 // Start server on the specified port and binding host
 app.listen(port, () => {
