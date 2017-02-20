@@ -1,0 +1,11 @@
+{
+  "blockchain": {
+    "url": "http://services-uscentral.skytap.com",
+    "port": "9054",
+    "endpoints": {
+      "peers": "/network/peers",
+      "login": "/registrar",
+      "chaincode": "/chaincode"
+    }
+  }
+}
