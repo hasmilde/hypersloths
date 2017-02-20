@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true})); // added for passport/login
 
 // static files
-app.use('/login', express.static('src/client'));
+// app.use('/login', express.static('src/client'));
 
 // Pass app to the session (because it needs the added middleware)
 //require('./session').session(app);
