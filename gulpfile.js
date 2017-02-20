@@ -17,33 +17,12 @@ gulp.task('lint', () => {
 gulp.task('unit-test', () => {
   gulp.src([paths.server.specs])
     .pipe(plugins.mocha({
-    reporter: 'progress'}));
-
-});
-
-// Run the unit-test coverage reportage
-gulp.task('pre-unit-test-report', () => {
-  gulp.src([paths.server.coverage])
-    .pipe(plugins.istanbul({
-      includeUntested: true
-    }))
-    // Force 'require; to return covered files
-    .pipe(plugins.istanbul.hookRequire());
-
-});
-
-// Run the unit-test report
-gulp.task('unit-test-report', ['pre-unit-test-report'], () => {
-  gulp.src([paths.server.specs])
-    .pipe(plugins.mocha())
-    .pipe(plugins.istanbul.writeReports({
-      dir: './tests/coverage'
+      reporter: 'progress'
     }));
-
 });
 
 // Start the server
-gulp.task('serve', ['unit-test','unit-test-report'], () => {
+gulp.task('serve', ['unit-test'], () => {
   process.env.port = config.env.port;
 
   const options = {
