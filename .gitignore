@@ -1,6 +1,9 @@
+secret.json
+
 .idea
 node_modules
-./src/server/paypal/configure.js
+tests/coverage
+src/server/paypal/configure.js
 
 *.p12
 .p12
