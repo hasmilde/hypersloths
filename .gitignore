@@ -3,6 +3,7 @@ secret.json
 .idea
 node_modules
 tests/coverage
+src/server/paypal/configure.js
 
 *.p12
 .p12
