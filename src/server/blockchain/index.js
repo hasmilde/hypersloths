@@ -5,8 +5,6 @@ const config = require('./config');
 const example = require('./example');
 const secret = require('./../../../secret.json');
 
-console.log 
-
 blockchain.route('/config')
   .get(function(req, res) {
   	res.send(config);
@@ -14,7 +12,7 @@ blockchain.route('/config')
 
 blockchain.route('/example')
   .get(function(req, res) {
-  	res.send(secret);
+  	res.send(example);
   });
 
 
