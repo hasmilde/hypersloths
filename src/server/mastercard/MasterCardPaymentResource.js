@@ -20,14 +20,12 @@ function saveTransactionInBlockChain(req,res){
   console.log('should now be saved in the blockchain');
 }
 
-function startTransaction(req,res){
-  paymentService(req, function(error, data){
-    if(data){
-      console.log('payment is performed.')
-      return data;
-    } else {
-      res.send(error);
-    }
+function startTransaction(body){
+  return paymentService(body, function(error, data){
+    console.log('in startTransaction')
+    console.log(error);
+    console.log(data);
+    return data;
   });
 }
 
@@ -37,11 +35,13 @@ const payment = {
 
     performSecurityChecks(req,res);
     saveTransactionInBlockChain(req,res);
-    var data = startTransaction(req,res);
+    var data = startTransaction(req.body);
+
 
     console.log('sending response:');
     console.log(data);
-    res.send(data);
+    res.status(200);
+    res.json(data);
   }
 };
 

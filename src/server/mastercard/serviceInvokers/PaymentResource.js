@@ -37,22 +37,23 @@ initializeAPI();
 
 moneysend.Payment.create(req
 , function (error, data) {
+
     if (error) {
         console.error("An error occurred");
         console.error(error);
-        resp(error);
+       return undefined;
     }
     else {
-        console.log(data.Transfer.RequestId);     //Output-->400399
-        console.log(data.Transfer.TransactionReference);     //Output-->1102058832510050082
-        console.log(data.Transfer.TransactionHistory.Transaction.Type);     //Output-->PAYMENT
-        console.log(data.Transfer.TransactionHistory.Transaction.SystemTraceAuditNumber);     //Output-->073162
-        console.log(data.Transfer.TransactionHistory.Transaction.NetworkReferenceNumber);     //Output-->412371237
-        console.log(data.Transfer.TransactionHistory.Transaction.SettlementDate);     //Output-->0626
-        console.log(data.Transfer.TransactionHistory.Transaction.Response.Code);     //Output-->00
+//        console.log(data.Transfer.RequestId);     //Output-->400399
+//        console.log(data.Transfer.TransactionReference);     //Output-->1102058832510050082
+//        console.log(data.Transfer.TransactionHistory.Transaction.Type);     //Output-->PAYMENT
+//        console.log(data.Transfer.TransactionHistory.Transaction.SystemTraceAuditNumber);     //Output-->073162
+//        console.log(data.Transfer.TransactionHistory.Transaction.NetworkReferenceNumber);     //Output-->412371237
+//        console.log(data.Transfer.TransactionHistory.Transaction.SettlementDate);     //Output-->0626
+//        console.log(data.Transfer.TransactionHistory.Transaction.Response.Code);     //Output-->00
         console.log(data.Transfer.TransactionHistory.Transaction.Response.Description);     //Output-->Approved or completed successfully
-        console.log(data.Transfer.TransactionHistory.Transaction.SubmitDateTime);     //Output-->2012-06-25T19:28:23Z
-        resp(null,data);
+//        console.log(data.Transfer.TransactionHistory.Transaction.SubmitDateTime);     //Output-->2012-06-25T19:28:23Z
+        return data;
     }
 });
 }
