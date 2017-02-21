@@ -23,7 +23,7 @@ function performSecurityChecks(body) {
     AccountInquiry: {
       AccountNumber: body.FundingRequestV3.FundingCard.AccountNumber
     }
-  }
+  };
 
   return lostStolenService.accountInquiry(requestData);
 }
@@ -73,7 +73,7 @@ function createPayment(req, res) {
       console.log(values[0]);
 
       // Log moneysendService.screenSanctions data
-      console.log('moneysendService.screenSanctions response:')
+      console.log('moneysendService.screenSanctions response:');
       console.log(values[1]);
 
       // Save the transaction in the blockchain
@@ -114,6 +114,6 @@ function createPayment(req, res) {
 // Methods to export
 const MasterCardPaymentResource = {
   createPayment
-}
+};
 
 module.exports = MasterCardPaymentResource;
