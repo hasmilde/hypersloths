@@ -7,7 +7,7 @@
 <ion-header>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
   <ion-navbar>
-    <ion-title>betaalMethodeOverzicht</ion-title>
+    <ion-title>Complete Overview</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,17 +15,46 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-grid style="width:100%">
+    <ion-item (click)="mastercardNext()">
+      <ion-grid>
         <ion-row>
-          <ion-col>
-            <p>MasterCard</p>
+          <ion-col width-33>
+            <h5>MasterCard</h5><br><p>25 transactions</p>
           </ion-col>
-          <ion-col>
-            <pie-chart></pie-chart>
+          <ion-col width-33>
+            <div style="display:block">
+            <canvas baseChart responsive="true" width="100%"
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+            </div>
           </ion-col>
-          <ion-col>
-            <button (click)="mastercardNext()" ion-button style="position: relative; left:50%;">More</button>
+          <ion-col width-33  >
+            <button ion-button full style="background-color: #2badad; color:white;"> -43eu </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item (click)="paypalNext()">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-33>
+            <h5>Paypal</h5><br><p>154 transactions</p>
+          </ion-col>
+          <ion-col width-33>
+            <div style="display:block">
+              <canvas baseChart responsive="true" width="100%"
+                      [data]="pieChartData"
+                      [labels]="pieChartLabels"
+                      [chartType]="pieChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </ion-col>
+          <ion-col width-33  >
+            <button ion-button full style="background-color: #2badad; color:white;"> +91eu </button>
           </ion-col>
         </ion-row>
       </ion-grid>

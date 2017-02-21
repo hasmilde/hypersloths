@@ -1,2 +1,21 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(loginPage)">
+        Login
+      </button>
+      <button ion-item (click)="openPage(signupPage)">
+        Signup
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav #content [root]="rootPage"></ion-nav>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>

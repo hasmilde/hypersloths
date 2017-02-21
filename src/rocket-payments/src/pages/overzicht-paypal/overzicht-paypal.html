@@ -13,6 +13,55 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <h3 style="text-align: center">history</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <div style="display: block;">
+          <canvas baseChart width="400" height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50 padding-horizontal>
+        <button (click)="Payout()" ion-button full padding-horizontal>Payout</button>
+      </ion-col>
+      <ion-col width-50 padding-horizontal>
+        <button (click)="Request()" ion-button full padding-horizontal>Request</button>
+      </ion-col>
+    </ion-row>
+    <ion-row padding-horizontal>
+      <ion-col width-100>
+        <h4> Saldo +91</h4>
+
+      </ion-col>
+      <ion-col width-100>
+        <h4> Secure 50</h4>
+
+      </ion-col>
+      <ion-col width-100>
+        <h4> Insecure 21</h4>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <button outline full ion-button>improve</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

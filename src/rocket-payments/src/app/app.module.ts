@@ -8,6 +8,11 @@ import { BetaalMethodeOverzichtPage} from '../pages/betaal-methode-overzicht/bet
 import {OverzichtMastercardPage} from "../pages/overzicht-mastercard/overzicht-mastercard";
 import { ChartsModule } from 'ng2-charts';
 import {PieChartComponent} from "../components/pie-chart/pie-chart";
+import {LineChartComponent} from "../components/line-chart/line-chart";
+import {OverzichtPaypalPage} from "../pages/overzicht-paypal/overzicht-paypal";
+import {BetalingMetMastercardPage} from "../pages/betaling-met-mastercard/betaling-met-mastercard";
+//import {Chart} from 'chart.js';
+//import { ChartModule } from 'angular2-highcharts';
 
 @NgModule({
   declarations: [
@@ -18,10 +23,16 @@ import {PieChartComponent} from "../components/pie-chart/pie-chart";
     BetaalMethodeOverzichtPage,
     OverzichtMastercardPage,
     PieChartComponent,
+    LineChartComponent,
+    OverzichtPaypalPage,
+    BetalingMetMastercardPage
+
 
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+
+    //Chart
     ChartsModule
   ],
   bootstrap: [IonicApp],
@@ -31,7 +42,9 @@ import {PieChartComponent} from "../components/pie-chart/pie-chart";
     UitlegPage,
     BetaalmethodetoevoegenPage,
     BetaalMethodeOverzichtPage,
-    OverzichtMastercardPage
+    OverzichtMastercardPage,
+    OverzichtPaypalPage,
+    BetalingMetMastercardPage
 
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

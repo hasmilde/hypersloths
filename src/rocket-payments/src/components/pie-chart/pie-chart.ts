@@ -9,16 +9,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pie-chart',
-  templateUrl: 'pie-chart.html'
+  templateUrl: 'pie-chart.html',
+  styles:[`
+    .chart {
+      display: block;
+    }`]
 })
 export class PieChartComponent {
 
-  text: string;
 
-  constructor() {
-    console.log('Hello PieChart Component');
-    this.text = 'Hello World';
-  }
 
   public pieChartLabels:string[] = ['Safe', 'Unsafe'];
   public pieChartData:number[] = [500, 100];
