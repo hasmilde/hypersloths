@@ -55,51 +55,65 @@ function startTransaction(body) {
   return moneysendService.createPayment(body);
 }
 
-const payment = {
-  payment(req, res) {
-    console.log('Starting the payment process');
+/**
+ * Create the payment
+ * @param req The request
+ * @param res The payment
+ */
+function createPayment(req, res) {
+  console.log('Starting the payment process');
 
-    const body = req.body;
+  const body = req.body;
 
-    performSecurityChecks(body)
-      .then((data) => {
-        console.log('lostStolenService.accountInquiry response:');
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log('lostStolenService.accountInquiry error:');
-        console.log(error);
-      });
+  // First resolve security and sanction checks
+  Promise.all([performSecurityChecks(body), screenSanction(body)])
+    .then((values) => {
+      // Log lostStolenService.accountInquiry data
+      console.log('lostStolenService.accountInquiry response:');
+      console.log(values[0]);
 
-    screenSanction(body)
-      .then((data) => {
-        console.log('moneysendService.screenSanctions response:')
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log('moneysendService.screenSanctions error:');
-        console.log(error);
-      });
+      // Log moneysendService.screenSanctions data
+      console.log('moneysendService.screenSanctions response:')
+      console.log(values[1]);
 
-    // TODO: Use async library to call the below methods after all checks have been done
-    saveTransactionInBlockChain(body);
+      // Save the transaction in the blockchain
+      saveTransactionInBlockChain(body);
 
-    startTransaction(body)
-      .then((data) => {
-        console.log('moneysendService.createPayment response:');
-        console.log(data);
+      // Start the Mastercard transaction. This should happen only if the transaction was successfully saved in the blockchain
+      startTransaction(body)
+        .then((data) => {
+          // Log moneysendService.createPayment data
+          console.log('moneysendService.createPayment response:');
+          console.log(data);
 
-        res.status(200);
-        res.json(data);
-      })
-      .catch((error) => {
-        console.log('moneysendService.createPayment error:');
-        console.log(error);
+          // Send the response
+          res.status(200);
+          res.json(data);
+        })
+        .catch((error) => {
+          // Log the reject error
+          console.log('moneysendService.createPayment error:');
+          console.log(error);
 
-        res.status(500);
-        res.json(error);
-      });
-  }
-};
+          // Send the response
+          res.status(500);
+          res.json(error);
+        });
+    })
+    .catch((error) => {
+      // Log the reject error
+      console.log('lostStolenService.accountInquiry or moneysendService.screenSanctions error:');
+      console.log(error);
 
-module.exports = payment;
+      // Send the response
+      res.status(500);
+      res.json(error);
+    });
+}
+
+// Methods to export
+const MasterCardPaymentResource = {
+  createPayment
+}
+
+module.exports = MasterCardPaymentResource;

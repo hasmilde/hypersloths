@@ -4,6 +4,6 @@ const mastercardRouter = require('express').Router(); // eslint-disable-line new
 const mastercardPayment = require('./MasterCardPaymentResource');
 
 mastercardRouter.route('/payment')
-  .post(mastercardPayment.payment);
+  .post(mastercardPayment.createPayment);
 
 module.exports = mastercardRouter;
