@@ -58,7 +58,7 @@ function startTransaction(body) {
 /**
  * Create the payment
  * @param req The request
- * @param res The payment
+ * @param res The response
  */
 function createPayment(req, res) {
   console.log('Starting the payment process');
