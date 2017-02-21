@@ -6,17 +6,16 @@ const bodyParser = require('body-parser');
 const mastercard = require('./mastercard');
 const block = require('./blockchain');
 
-
 // Configure the server
 const port = process.env.port || 3000;
 
 // Create a new express server
 const app = express();
 
-// voeg middle ware toe
+// Add middleware
 app.use(helmet());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true})); // added for passport/login
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // static files
 // app.use('/login', express.static('src/client'));

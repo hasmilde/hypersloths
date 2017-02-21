@@ -1,4 +1,8 @@
-﻿'use strict';
+'use strict';
+
+/**
+ * API documentation: https://developer.mastercard.com/documentation/moneysend
+ */
 
 const moneysend = require('mastercard-moneysend');
 const mastercardAPIProperties = require('./../resources/mastercardAPI-properties.json');
@@ -11,7 +15,6 @@ const keyPassword = mastercardAPIProperties.keyPassword; // For production: chan
 
 // You only need to do initialize MasterCardAPI once
 // For production use pass sandbox: false
-
 function getAuthentication() {
   return new MasterCardAPI.OAuth(consumerKey, keyStorePath, keyAlias, keyPassword);
 }
@@ -23,22 +26,54 @@ function initializeAPI() {
   });
 }
 
-const screenSanctions = (requestData) => {
-  console.log('start with sanction-screening');
+/**
+ * API documentation: https://developer.mastercard.com/documentation/moneysend/#api_payment
+ * @param requestData The request data for the Payment.create API
+ * @returns {Promise} The response of Payment.create
+ */
+function createPayment(requestData) {
+  console.log('Starting Payment.create request');
 
   initializeAPI();
 
   return new Promise((resolve, reject) => {
-    moneysend.SanctionScreening.read(requestData, (error, data) => {
+    moneysend.Payment.create(requestData, (error, data) => {
       if (error) {
-        console.error('An error occurred');
-        console.error(error);
+        console.error('An error occurred in the Payment.create request');
         return reject(error);
       }
 
       return resolve(data);
     });
   });
-};
+}
 
-module.exports = screenSanctions;
+/**
+ * API documentation: https://developer.mastercard.com/documentation/moneysend/#api_sanction_screening
+ * @param requestData The request data for the SanctionScreening.read API
+ * @returns {Promise}
+ */
+function screenSanctions(requestData) {
+  console.log('Starting SanctionScreening.read request');
+
+  initializeAPI();
+
+  return new Promise((resolve, reject) => {
+    moneysend.SanctionScreening.read(requestData, (error, data) => {
+      if (error) {
+        console.error('An error occurred in the SanctionScreening.read request');
+        return reject(error);
+      }
+
+      return resolve(data);
+    });
+  });
+}
+
+// Methods to export
+const MoneysendService = {
+  createPayment,
+  screenSanctions
+}
+
+module.exports = MoneysendService;

@@ -47,6 +47,8 @@ module.exports = {
     // Rule: require or disallow a space before function opening parenthesis
     // Docs: http://eslint.org/docs/rules/space-before-function-paren
     // Airbnb: 'space-before-function-paren': [2, { 'anonymous': 'always', 'named': 'never' }]
-    'space-before-function-paren': [2, 'never']
+    'space-before-function-paren': [2, 'never'],
+
+    'max-len': [0, 100]
   }
 };
