@@ -5,6 +5,20 @@ const moneysendService = require('./serviceInvokers/MoneysendService');
 
 // Inquire if an account has been stolen
 function performSecurityChecks(body) {
+  /**
+   * FIXME: Something is wrong when we call the API with our account number
+   * From the API example 5343434343434343, '5343434343434343', 5222222222222200, and '5222222222222200' work,
+   * but using the AccountNumber from the request body or hardcoding it throws a 400.
+   * Maybe our AccountNumber is not known in the system/part of the sandbox.
+   * error.rawErrorData.Errors.Error gives:
+   * {
+   *   Source: 'System',
+   *   ReasonCode: 'SYSTEM_ERROR',
+   *   Description: 'Unknown Error',
+   *   Recoverable: 'false'
+   * }
+   */
+
   const requestData = {
     AccountInquiry: {
       AccountNumber: body.FundingRequestV3.FundingCard.AccountNumber
