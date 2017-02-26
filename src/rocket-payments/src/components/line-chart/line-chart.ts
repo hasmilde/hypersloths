@@ -63,4 +63,5 @@ export class LineChartComponent {
   public chartHovered(e:any):void {
     console.log(e);
   }
+  public destroy(e:any){}
 }

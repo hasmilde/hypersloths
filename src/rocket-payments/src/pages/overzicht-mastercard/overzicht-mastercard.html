@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Overview Mastercard</ion-title>
+    <ion-title style="background-color: white">Overview Mastercard</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -21,9 +21,9 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col width-100>
-        <div style="display: block;">
-          <canvas baseChart width="400" height="400"
+      <ion-col width-100 style="background-image: url(../../assets/images/line-chart.png); background-repeat: no-repeat; background-size: contain;">
+
+        <canvas baseChart width="400" height="400"
                   [datasets]="lineChartData"
                   [labels]="lineChartLabels"
                   [options]="lineChartOptions"
@@ -32,12 +32,12 @@
                   [chartType]="lineChartType"
                   (chartHover)="chartHovered($event)"
                   (chartClick)="chartClicked($event)"></canvas>
-        </div>
+
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col width-50 padding-horizontal>
-        <button (click)="Payout()" ion-button full padding-horizontal>Payout</button>
+        <button (click)="Payout()" ion-button full padding-horizontal>Payment</button>
       </ion-col>
       <ion-col width-50 padding-horizontal>
         <button (click)="Request()" ion-button full padding-horizontal>Request</button>
@@ -59,7 +59,7 @@
     </ion-row>
     <ion-row>
       <ion-col width-100>
-        <button outline full ion-button>improve</button>
+        <button outline full ion-button>transactions</button>
       </ion-col>
     </ion-row>
   </ion-grid>

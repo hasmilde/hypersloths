@@ -11,6 +11,7 @@ import {PieChartComponent} from "../components/pie-chart/pie-chart";
 import {LineChartComponent} from "../components/line-chart/line-chart";
 import {OverzichtPaypalPage} from "../pages/overzicht-paypal/overzicht-paypal";
 import {BetalingMetMastercardPage} from "../pages/betaling-met-mastercard/betaling-met-mastercard";
+import {FormsModule} from '@angular/forms'
 //import {Chart} from 'chart.js';
 //import { ChartModule } from 'angular2-highcharts';
 
@@ -31,6 +32,7 @@ import {BetalingMetMastercardPage} from "../pages/betaling-met-mastercard/betali
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+    FormsModule,
 
     //Chart
     ChartsModule

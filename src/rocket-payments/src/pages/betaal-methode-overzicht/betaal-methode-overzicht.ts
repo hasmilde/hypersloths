@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {OverzichtMastercardPage} from '../overzicht-mastercard/overzicht-mastercard'
-import {PieChartComponent} from '../../components/pie-chart/pie-chart'
+//import {PieChartComponent} from '../../components/pie-chart/pie-chart'
 import {OverzichtPaypalPage} from "../overzicht-paypal/overzicht-paypal";
 /*
   Generated class for the BetaalMethodeOverzicht page.
@@ -12,7 +12,7 @@ import {OverzichtPaypalPage} from "../overzicht-paypal/overzicht-paypal";
 @Component({
   selector: 'page-betaal-methode-overzicht',
   templateUrl: 'betaal-methode-overzicht.html',
-  providers:[PieChartComponent]
+  //providers:[PieChartComponent]
 })
 export class BetaalMethodeOverzichtPage {
 

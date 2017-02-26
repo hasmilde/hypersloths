@@ -5,9 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-  <ion-navbar>
-    <ion-title>Complete Overview</ion-title>
+
+  <ion-navbar style="background-color: white">
+    <ion-title style="background-color: white">Complete Overview</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -21,18 +21,17 @@
           <ion-col width-33>
             <h5>MasterCard</h5><br><p>25 transactions</p>
           </ion-col>
-          <ion-col width-33>
-            <div style="display:block">
-            <canvas baseChart responsive="true" width="100%"
-                    [data]="pieChartData"
-                    [labels]="pieChartLabels"
-                    [chartType]="pieChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)"></canvas>
-            </div>
+          <ion-col width-33 class="graph" style="background-image: url(../../assets/images/pie-chart.png); background-repeat: no-repeat; background-size: contain;">
+            <!--<canvas baseChart responsive="true" width="100%"-->
+                    <!--[data]="pieChartData"-->
+                    <!--[labels]="pieChartLabels"-->
+                    <!--[chartType]="pieChartType"-->
+                    <!--(chartHover)="chartHovered($event)"-->
+                    <!--(chartClick)="chartClicked($event)"></canvas>-->
+
           </ion-col>
           <ion-col width-33  >
-            <button ion-button full style="background-color: #2badad; color:white;"> -43eu </button>
+            <button ion-button full > -43eu </button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -43,18 +42,17 @@
           <ion-col width-33>
             <h5>Paypal</h5><br><p>154 transactions</p>
           </ion-col>
-          <ion-col width-33>
-            <div style="display:block">
-              <canvas baseChart responsive="true" width="100%"
-                      [data]="pieChartData"
-                      [labels]="pieChartLabels"
-                      [chartType]="pieChartType"
-                      (chartHover)="chartHovered($event)"
-                      (chartClick)="chartClicked($event)"></canvas>
-            </div>
+          <ion-col width-33 style="background-image: url(../../assets/images/pie-chart.png); background-repeat: no-repeat; background-size: contain;">
+              <!--<canvas baseChart responsive="true" width="100%"-->
+                      <!--[data]="pieChartData"-->
+                      <!--[labels]="pieChartLabels"-->
+                      <!--[chartType]="pieChartType"-->
+                      <!--(chartHover)="chartHovered($event)"-->
+                      <!--(chartClick)="chartClicked($event)"></canvas>-->
+
           </ion-col>
           <ion-col width-33  >
-            <button ion-button full style="background-color: #2badad; color:white;"> +91eu </button>
+            <button ion-button full > +91eu </button>
           </ion-col>
         </ion-row>
       </ion-grid>

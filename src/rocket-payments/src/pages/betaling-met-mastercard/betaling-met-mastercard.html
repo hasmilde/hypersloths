@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Payout with Mastercard</ion-title>
+    <ion-title style="background-color: white">Payment with Mastercard</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,20 +15,24 @@
 
 <ion-content >
 
-  <ion-list>
+  <form (ngSubmit)="submitPayment()" style="position: absolute; top:30%; width:100%">
 
     <ion-item>
       <ion-label stacked>Account or Contact</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input  type="text" id="name"
+                 [(ngModel)]="payment.name" name="name"
+      ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Amount</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input  type="number" id="amount"
+                 [(ngModel)]="payment.amount" name="amount"
+      ></ion-input>
     </ion-item>
 
-  </ion-list>
 
-  <button ion-button block padding="15%" style="position:absolute; top:80%">Send</button>
 
+  <button type="submit" ion-button block padding="15%" >Send</button>
+  </form>
 </ion-content>
